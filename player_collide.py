@@ -12,7 +12,7 @@ class PlayerCollide(bge.types.KX_GameObject):
         self.collisionCallbacks.append(self.__onCollision)
 
     def update(self):
-        print('update')
+        ...
     
     def __onCollision(self, obj):
         if not obj is None:
@@ -21,10 +21,8 @@ class PlayerCollide(bge.types.KX_GameObject):
                 if 'enemy_mash' in obj.childrenRecursive:
                     obj.childrenRecursive['enemy_mash'].playAction("Damage", 1, 15, blendin=4)
                 else:
-                    print('aqui')
                     obj.childrenRecursive['enemy_mash_2'].playAction("Damage", 1, 15, blendin=4)
                 obj['vida'] -= self.value_attack
-                print(self.value_attack)
                 self.is_collision = True
 
 #Modules

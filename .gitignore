@@ -5,6 +5,7 @@ __pycache__/
 
 # blend
 *.blend
+*.blend1
 
 # C extensions
 *.so

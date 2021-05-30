@@ -9,14 +9,16 @@ class Component(bge.types.KX_PythonComponent):
     ])
 
     def start(self, args):
-        bge.logic.addScene("Interface_Game_Play")
+        if not "Interface_Game_Play" in bge.logic.getSceneList():
+            bge.logic.addScene("Interface_Game_Play")
 
     def update(self):
         cube_controller = self.object.parent
         
         if cube_controller['vida'] <= 0:
-            # bge.logic.getSceneList().get("Interface_Game_Play").end()
-            bge.logic.addScene("Interface_Game_Over")
+            
+            if not "Interface_Game_Over" in bge.logic.getSceneList():
+                bge.logic.addScene("Interface_Game_Over")
             bge.logic.getCurrentScene().suspend()
         direction = bge.constraints.getCharacter(cube_controller).walkDirection
         
