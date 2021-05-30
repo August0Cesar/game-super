@@ -3,6 +3,7 @@ from mathutils import Vector
 from collections import OrderedDict
 from utils.animate import animate
 
+
 class Component(bge.types.KX_PythonComponent):
     
     args = OrderedDict([
