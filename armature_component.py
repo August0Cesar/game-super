@@ -10,7 +10,8 @@ class Component(bge.types.KX_PythonComponent):
 
     def start(self, args):
         if not "Interface_Game_Play" in bge.logic.getSceneList():
-            bge.logic.addScene("Interface_Game_Play")
+            # bge.logic.addScene("Interface_Game_Play")
+            bge.logic.addScene("Interface_Game_BG-UI")
 
     def update(self):
         cube_controller = self.object.parent

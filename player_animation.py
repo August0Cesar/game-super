@@ -23,7 +23,8 @@ class PlayerAnimation(bge.types.BL_ArmatureObject):
         if self.character.onGround:
             self.__handleGroundAnimations()
         else:
-           self.__animate(['salto', 21, 21])
+            if not self['attack']:
+                self.__animate(['salto', 21, 21])
     
     def __reset_animations(self):
         if self.getActionFrame() > 36 and self.getActionName() == 'player_attack':

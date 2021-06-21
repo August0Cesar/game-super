@@ -189,6 +189,18 @@ class ThirdPersonCamera(bge.types.KX_PythonComponent):
 
 	def update(self):
 		"""Update Function"""
+
+		keyboard = bge.logic.keyboard.inputs
+		mouse = bge.logic.mouse
+
+		# if keyboard[bge.events.MKEY].activated:
+		# 	if self.active:
+		# 		self.active = False
+		# 		mouse.visible = True
+		# 	else:
+		# 		self.active = True
+		# 		mouse.visible = False
+
 		if self.active and not self.__error:
 			self.mouselook()
 
